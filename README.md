@@ -1,5 +1,7 @@
 # MongoDB-Kubernetes
 
+Note: Order of creation matters!
+
 ## Create secret
 kubectl apply -f mongo-secret.yaml
 
