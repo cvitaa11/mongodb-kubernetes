@@ -1,0 +1,17 @@
+mongodb:
+  image: mongo
+  resources:
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+
+mongoExpress:
+  image: mongo-express
+  resources:
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+
+service:
+  type: LoadBalancer
+  nodePort: 30000
