@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mongodb-chart.fullname" . }}
+  name: {{ .Release.Name }}-mongo-express-deployment
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,9 @@ spec:
         - name: mongo-express
           image: {{ .Values.mongoExpress.image }}
           resources:
-            limits: {{ toYaml .Values.mongoExpress.resources.limits }}
+            limits:
+              memory: {{ .Values.mongoExpress.resources.limits.memory }}
+              cpu: {{ .Values.mongoExpress.resources.limits.cpu }}
           ports:
             - containerPort: 8081
           env:

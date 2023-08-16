@@ -14,4 +14,4 @@ mongoExpress:
 
 service:
   type: LoadBalancer
-  nodePort: 30000
+  nodePort: 32700

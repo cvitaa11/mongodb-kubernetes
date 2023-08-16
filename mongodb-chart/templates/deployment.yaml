@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mongodb-chart.fullname" . }}
+  name: {{ .Release.Name }}
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,9 @@ spec:
         - name: mongodb
           image: {{ .Values.mongodb.image }}
           resources:
-            limits: {{ toYaml .Values.mongodb.resources.limits }}
+            limits:
+              memory: {{ .Values.mongodb.resources.limits.memory }}
+              cpu: {{ .Values.mongodb.resources.limits.cpu }}
           ports:
             - containerPort: 27017
           env:
