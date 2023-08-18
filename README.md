@@ -10,6 +10,13 @@ This repository contains a Helm chart for deploying MongoDB and Mongo Express. T
 
 ## Installation
 
+You can install Helm chart directly from published version on GitHub Packages:
+```
+$ helm upgrade --install mongodb-chart oci://ghcr.io/cvitaa11/mongodb-chart --version 0.1.0
+```
+
+or package it locally on your machine by following the instructions below 👇🏻
+
 1. Make sure you have Helm installed on your machine and configured to work with your Kubernetes cluster.
 
 2. Clone this repository:
